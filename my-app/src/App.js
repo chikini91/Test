@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import './sass/index.scss';
 import Select from 'react-select';
 import CryptoItem from './CryptoItem.js';
-import axios from 'axios';
 
 const options = [
     { value: 'USD', label: 'USD' },
     { value: 'EUR', label: 'EUR' },
     { value: 'RUB', label: 'RUB' },
-    { value: 'GBR', label: 'GBR' }
+    { value: 'GBP', label: 'GBP' }
 ];
 
 class App extends Component {

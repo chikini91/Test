@@ -6,9 +6,9 @@ body {
 
 .App {
   width: 100%;
-  height: 720px;
+  height: 100vh;
   background: url("../img/bg.svg") no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 
 .currency {
@@ -51,7 +51,7 @@ body {
     &-item {
       width: 30%;
       height: 355px;
-      border-radius: 10%;
+      border-radius: 10px;
       background:radial-gradient(circle farthest-corner at center, #ffffff 0%, #577a58 51%, #36533c 79%, #2d4934 100%);
       padding: 20px;
       text-align: center;
@@ -89,7 +89,7 @@ body {
         display: flex;
         justify-content: space-between;
         margin: 7px 0;
-        line-height: 29px;
+        padding: 5px 0;
         font-size: 14px;
         font-weight: 700;
 
@@ -175,7 +175,7 @@ body {
   }
 
   &__control {
-    width: 300px;
+    width: 85%;
     height: 55px;
     border-color: #4dcee4 !important;
     outline: none!important;
@@ -196,7 +196,7 @@ body {
   }
 
   &__menu {
-    width: 300px!important;
+    width: 85%!important;
     border: 1px solid #4dcee4!important;
     outline: none!important;
     box-shadow: none!important;
@@ -251,4 +251,88 @@ body {
 }
 .checkbox:checked + label:after {
   left: 20px;
+}
+
+
+
+@media all and (min-width:1200px) {
+  .currency__crypto-item {
+    width: 300px;
+  }
+}
+
+
+@media all and (max-width:870px) {
+  .currency__crypto-item {
+    width: 31%;
+    padding: 10px;
+    font-size: 0.85em;
+    height: auto;
+  }
+
+  .currency__crypto-info-price-text,
+  .currency__crypto-info-price-quantity {
+    font-size: 16px;
+  }
+
+  .currency-title {
+    font-size: 24px;
+  }
+
+  .currency__crypto-info-price {
+    line-height: 125%;
+    padding: 5px 0;
+    text-align: left;
+    align-items: center;
+  }
+
+  .currency__crypto-info-period-item,
+  .currency__crypto-info-value {
+    font-size: 11px;
+  }
+}
+
+@media all and (max-width:650px) {
+  .currency {
+    width: 95%;
+    padding-top: 40px;
+  }
+
+  .currency__crypto-item {
+    width: 32%;
+    padding: 5px;
+  }
+}
+
+@media all and (max-width:460px) {
+  .App {
+    height: auto;
+  }
+
+  .currency {
+    padding-top: 20px;
+
+    &__crypto {
+      margin-top: 10px;
+      flex-direction: column;
+
+      &-item {
+        width: 60%;
+        height: auto;
+        margin: auto;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+    }
+
+    &__block {
+      height: 70px;
+    }
+  }
+}
+
+@media all and (max-width:360px) {
+  .currency-title {
+    font-size: 20px;
+  }
 }
