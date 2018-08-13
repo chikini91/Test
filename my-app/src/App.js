@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import img from './img/bg.svg';
 import './sass/index.scss';
 import Select from 'react-select';
+import CryptoItem from './CryptoItem.js';
+import axios from 'axios';
 
 const options = [
     { value: 'USD', label: 'USD' },
@@ -12,13 +12,17 @@ const options = [
 ];
 
 class App extends Component {
-    state = {
-        selectedOption: options[0],
-    }
+    constructor(props){
+        super(props);
+        this.state = {
+            selectedOption: options[0],
+            data: {}
+        }
+
+    };
 
     handleChange = (selectedOption) => {
         this.setState({ selectedOption });
-        console.log(`Option selected:`, selectedOption);
     }
 
   render() {
@@ -26,17 +30,25 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="header">
-            <h1>Select currency to exchange:</h1>
-            <div className="currency-type">
-                <Select
-                    value={selectedOption}
-                    onChange={this.handleChange}
-                    options={options}
-                    classNamePrefix="select"
-                />
-            </div>
-        </div>
+          <div className="currency">
+              {/*{console.log(this.state.data)}*/}
+              <div className="currency__block">
+                  <h1 className="currency-title">Select currency to exchange:</h1>
+                  <div className="currency-type">
+                      <Select
+                          value={selectedOption}
+                          onChange={this.handleChange.bind(this)}
+                          options={options}
+                          classNamePrefix="select"
+                      />
+                  </div>
+              </div>
+              <ul className="currency__crypto">
+                  <CryptoItem title="Ethereum" selectedOption={this.state.selectedOption.value} name="ETH"/>
+                  <CryptoItem title="Litecoin" selectedOption={this.state.selectedOption.value} name="LTC"/>
+                  <CryptoItem title="Bitcoin" selectedOption={this.state.selectedOption.value} name="BTC"/>
+              </ul>
+          </div>
       </div>
     );
   }
