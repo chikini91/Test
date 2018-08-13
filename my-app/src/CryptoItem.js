@@ -22,7 +22,7 @@ class CryptoItem extends Component {
 
     componentDidMount() {
 
-        const apiUrl = `https://apiv2.bitcoinaverage.com/indices/global/ticker/${this.props.name}${this.props.selectedOption}`;
+        const apiUrl = `https://apiv2.bitcoinaverage.com/indices/global/ticker/${this.props.name}${this.props.selectedOption.value}`;
 
         axios.get(apiUrl)
             .then(res => {
@@ -40,7 +40,7 @@ class CryptoItem extends Component {
 
     componentWillReceiveProps(nextprops) {
 
-        const apiUrl = `https://apiv2.bitcoinaverage.com/indices/global/ticker/${nextprops.name}${nextprops.selectedOption}`;
+        const apiUrl = `https://apiv2.bitcoinaverage.com/indices/global/ticker/${nextprops.name}${nextprops.selectedOption.value}`;
 
         axios.get(apiUrl)
             .then(res => {
@@ -57,10 +57,6 @@ class CryptoItem extends Component {
     }
 
     render() {
-
-        const {hour, day, week, mounth} = this.state.price || this.state.percent;
-        // const {hour, day, week, mounth} = this.state.percent;
-
         return (
             <li className="currency__crypto-item currency__crypto_eth">
                 <h4 className="currency__crypto-item-title">{this.props.title}</h4>
@@ -68,7 +64,7 @@ class CryptoItem extends Component {
                 <div className="currency__crypto-info">
                     <div className="currency__crypto-info-price">
                         <span className="currency__crypto-info-price-text">Price:</span>
-                        <span className="currency__crypto-info-price-quantity">${this.state.volume.toFixed(2)}</span>
+                        <span className="currency__crypto-info-price-quantity">{this.props.selectedOption.symbol}{this.state.volume.toFixed(2)}</span>
                     </div>
                     <div className="currency__crypto-info-price">
                         <span>Percent change</span>
@@ -76,7 +72,7 @@ class CryptoItem extends Component {
                             <input type="checkbox"
                                    className="checkbox"
                                    id={`${this.props.name}-checkbox`}
-                                   checked={this.props.name === 'BTC' ? this.state.enablePercent : !this.state.enablePercent}
+                                   checked={this.props.name === 'BTC' ? !this.state.enablePercent : this.state.enablePercent}
                                    onChange={this.Check.bind(this)}
                             />
                             <label htmlFor={`${this.props.name}-checkbox`}/>
@@ -85,19 +81,27 @@ class CryptoItem extends Component {
                     <ul className="currency__crypto-info-period">
                         <li className="currency__crypto-info-period-item">
                             <span>Hour change</span>
-                            <span className="currency__crypto-info-value">{this.state.enablePercent ? this.state.percent.hour : this.state.price.hour}</span>
+                            <span className={this.state.percent.hour > 0 || this.state.price.hour > 0 ? "currency__crypto-info-value" : "currency__crypto-info-value_negative"}>{this.state.enablePercent ? this.state.percent.hour : this.state.price.hour}
+                            {this.props.name === 'BTC' && this.state.enablePercent || this.props.name !== 'BTC' && !this.state.enablePercent ? ' %' : this.props.selectedOption.symbol}
+                            </span>
                         </li>
                         <li className="currency__crypto-info-period-item">
                             <span>Day change</span>
-                            <span className={this.state.percent.day > 0 || this.state.price.day > 0 ? "currency__crypto-info-value" : "currency__crypto-info-value_negative"}>{this.state.enablePercent ? this.state.percent.day : this.state.price.day}</span>
+                            <span className={this.state.percent.day > 0 || this.state.price.day > 0 ? "currency__crypto-info-value" : "currency__crypto-info-value_negative"}>{this.state.enablePercent ? this.state.percent.day : this.state.price.day}
+                            {this.props.name === 'BTC' && this.state.enablePercent || this.props.name !== 'BTC' && !this.state.enablePercent ? ' %' : this.props.selectedOption.symbol}
+                            </span>
                         </li>
                         <li className="currency__crypto-info-period-item">
                             <span>Week change</span>
-                            <span className={this.state.percent.week > 0 || this.state.price.week > 0 ? "currency__crypto-info-value" : "currency__crypto-info-value_negative"}>{this.state.enablePercent ? this.state.percent.week : this.state.price.hour}</span>
+                            <span className={this.state.percent.week > 0 || this.state.price.week > 0 ? "currency__crypto-info-value" : "currency__crypto-info-value_negative"}>{this.state.enablePercent ? this.state.percent.week : this.state.price.week}
+                            {this.props.name === 'BTC' && this.state.enablePercent || this.props.name !== 'BTC' && !this.state.enablePercent ? ' %' : this.props.selectedOption.symbol}
+                            </span>
                         </li>
                         <li className="currency__crypto-info-period-item">
                             <span>Mounth change</span>
-                            <span className={this.state.percent.month > 0 || this.state.price.month > 0 ? "currency__crypto-info-value" : "currency__crypto-info-value_negative"}>{this.state.enablePecent ? this.state.percent.month : this.state.price.month}</span>
+                            <span className={this.state.percent.month > 0 || this.state.price.month > 0 ? "currency__crypto-info-value" : "currency__crypto-info-value_negative"}>{this.state.enablePercent ? this.state.percent.month : this.state.price.month}
+                            {this.props.name === 'BTC' && this.state.enablePercent || this.props.name !== 'BTC' && !this.state.enablePercent ? ' %' : this.props.selectedOption.symbol}
+                            </span>
                         </li>
                     </ul>
                 </div>
