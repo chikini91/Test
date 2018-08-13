@@ -13,16 +13,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.29342723">
+    <splitter split-orientation="horizontal" split-proportion="0.14632238">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/App.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="45" column="88" selection-start-line="45" selection-start-column="88" selection-end-line="45" selection-end-column="88" />
-                  <caret line="46" column="88" selection-start-line="46" selection-start-column="88" selection-end-line="46" selection-end-column="88" />
-                  <caret line="47" column="87" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="87" />
+                <state relative-caret-position="342">
+                  <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -37,8 +35,8 @@
           <file leaf-file-name="CryptoItem.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/CryptoItem.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="67" column="113" selection-start-line="67" selection-start-column="113" selection-end-line="67" selection-end-column="113" />
+                <state relative-caret-position="178">
+                  <caret line="67" column="136" selection-start-line="67" selection-start-column="132" selection-end-line="67" selection-end-column="136" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -61,7 +59,6 @@
     <findStrings>
       <find>__crypto</find>
       <find>2.svg</find>
-      <find>-item</find>
       <find>-img</find>
       <find>5px</find>
       <find>label</find>
@@ -72,6 +69,15 @@
       <find>enable</find>
       <find>toF</find>
       <find>selectedOption</find>
+      <find>conso</find>
+      <find>item</find>
+      <find>-item</find>
+      <find>top</find>
+      <find>neg</find>
+      <find>lef</find>
+      <find>img</find>
+      <find>url</find>
+      <find>toFi</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -79,8 +85,8 @@
       <list>
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/API.js" />
-        <option value="$PROJECT_DIR$/src/sass/index.scss" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/sass/index.scss" />
         <option value="$PROJECT_DIR$/src/CryptoItem.js" />
       </list>
     </option>
@@ -178,12 +184,12 @@
       <updated>1534063198850</updated>
       <workItem from="1534063200758" duration="12381000" />
       <workItem from="1534084998476" duration="21893000" />
-      <workItem from="1534150703139" duration="26220000" />
+      <workItem from="1534150703139" duration="31291000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60494000" />
+    <option name="totallyTimeSpent" value="65565000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
@@ -258,8 +264,8 @@
         <state relative-caret-position="1566">
           <caret line="87" column="41" selection-start-line="87" selection-start-column="41" selection-end-line="87" selection-end-column="41" />
           <folding>
-            <marker date="1534186573429" expanded="true" signature="2956:3062" ph="..." />
-            <marker date="1534186573429" expanded="true" signature="3867:3920" ph="..." />
+            <marker date="1534193912846" expanded="true" signature="2856:2962" ph="..." />
+            <marker date="1534193912846" expanded="true" signature="3767:3820" ph="..." />
           </folding>
         </state>
       </provider>
@@ -279,33 +285,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="290" column="40" selection-start-line="290" selection-start-column="40" selection-end-line="290" selection-end-column="40" />
-          <folding>
-            <marker date="1534186573429" expanded="true" signature="2956:3062" ph="..." />
-            <marker date="1534186573429" expanded="true" signature="3867:3920" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="45" column="88" selection-start-line="45" selection-start-column="88" selection-end-line="45" selection-end-column="88" />
-          <caret line="46" column="88" selection-start-line="46" selection-start-column="88" selection-end-line="46" selection-end-column="88" />
-          <caret line="47" column="87" selection-start-line="47" selection-start-column="87" selection-end-line="47" selection-end-column="87" />
+        <state relative-caret-position="342">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="86" column="20" selection-start-line="86" selection-start-column="20" selection-end-line="86" selection-end-column="20" />
+          <folding>
+            <marker date="1534193912846" expanded="true" signature="2856:2962" ph="..." />
+            <marker date="1534193912846" expanded="true" signature="3767:3820" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CryptoItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="67" column="113" selection-start-line="67" selection-start-column="113" selection-end-line="67" selection-end-column="113" />
+        <state relative-caret-position="178">
+          <caret line="67" column="136" selection-start-line="67" selection-start-column="132" selection-end-line="67" selection-end-column="136" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

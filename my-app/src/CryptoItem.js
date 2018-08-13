@@ -13,7 +13,6 @@ class CryptoItem extends Component {
         }
     }
 
-
     Check() {
         this.setState({
             enablePercent: !this.state.enablePercent,
@@ -58,9 +57,11 @@ class CryptoItem extends Component {
 
     render() {
         return (
-            <li className="currency__crypto-item currency__crypto_eth">
+            <li className="currency__crypto-item">
                 <h4 className="currency__crypto-item-title">{this.props.title}</h4>
-                <img src={require('./img/3.svg')}/>
+                <div className="currency__crypto-item-wrapper">
+                    <img className="currency__crypto-item-img" src={require('./img/3.svg')}/>
+                </div>
                 <div className="currency__crypto-info">
                     <div className="currency__crypto-info-price">
                         <span className="currency__crypto-info-price-text">Price:</span>
@@ -80,25 +81,25 @@ class CryptoItem extends Component {
                     </div>
                     <ul className="currency__crypto-info-period">
                         <li className="currency__crypto-info-period-item">
-                            <span>Hour change</span>
+                            <span className="currency__crypto-info-opacity" >Hour change</span>
                             <span className={this.state.percent.hour > 0 || this.state.price.hour > 0 ? "currency__crypto-info-value" : "currency__crypto-info-value_negative"}>{this.state.enablePercent ? this.state.percent.hour : this.state.price.hour}
                             {this.props.name === 'BTC' && this.state.enablePercent || this.props.name !== 'BTC' && !this.state.enablePercent ? ' %' : this.props.selectedOption.symbol}
                             </span>
                         </li>
                         <li className="currency__crypto-info-period-item">
-                            <span>Day change</span>
+                            <span className="currency__crypto-info-opacity" >Day change</span>
                             <span className={this.state.percent.day > 0 || this.state.price.day > 0 ? "currency__crypto-info-value" : "currency__crypto-info-value_negative"}>{this.state.enablePercent ? this.state.percent.day : this.state.price.day}
                             {this.props.name === 'BTC' && this.state.enablePercent || this.props.name !== 'BTC' && !this.state.enablePercent ? ' %' : this.props.selectedOption.symbol}
                             </span>
                         </li>
                         <li className="currency__crypto-info-period-item">
-                            <span>Week change</span>
+                            <span className="currency__crypto-info-opacity" >Week change</span>
                             <span className={this.state.percent.week > 0 || this.state.price.week > 0 ? "currency__crypto-info-value" : "currency__crypto-info-value_negative"}>{this.state.enablePercent ? this.state.percent.week : this.state.price.week}
                             {this.props.name === 'BTC' && this.state.enablePercent || this.props.name !== 'BTC' && !this.state.enablePercent ? ' %' : this.props.selectedOption.symbol}
                             </span>
                         </li>
                         <li className="currency__crypto-info-period-item">
-                            <span>Mounth change</span>
+                            <span className="currency__crypto-info-opacity" >Mounth change</span>
                             <span className={this.state.percent.month > 0 || this.state.price.month > 0 ? "currency__crypto-info-value" : "currency__crypto-info-value_negative"}>{this.state.enablePercent ? this.state.percent.month : this.state.price.month}
                             {this.props.name === 'BTC' && this.state.enablePercent || this.props.name !== 'BTC' && !this.state.enablePercent ? ' %' : this.props.selectedOption.symbol}
                             </span>
